@@ -1,7 +1,6 @@
 __pycache__/
 *.pyc
 .env
-data/raw/*
 models/*
 .ipynb_checkpoints/
 myenv/
