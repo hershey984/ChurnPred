@@ -1,8 +1,10 @@
 #columns to drop
-DROP_COLS = ["CustomerID"]
+DROP_COLS = [
+    
+] 
 
 #target column(s)
-TARGET_COL = "Churn"
+TARGET_COL = ""
 
 #numeric columns
 NUM_COLS = [
