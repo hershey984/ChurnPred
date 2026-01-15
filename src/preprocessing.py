@@ -1,11 +1,9 @@
 import pandas as pd
 from sklearn.impute import SimpleImputer
-
 from config.schemas import TARGET_COL
 
-def preprocess_data(file_path: str):
+def preprocess_data(df: pd.DataFrame):
     try:
-        df = pd.read_excel(file_path)
         print("----------HEAD----------")
         print(df.head())
         dup = df.duplicated().sum()
