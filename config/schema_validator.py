@@ -1,4 +1,5 @@
-import schemas
+from . import schemas
+
 
 def validate_schemas(schema):
     # validates the loaded schema
@@ -6,9 +7,9 @@ def validate_schemas(schema):
         raise ValueError("Target column not defined")
     
     feature_cols = [
-        *schemas.get("numerical", []),
-        *schemas.get("categorical", []),
-        *schemas.get("binary", [])
+        *schema.get("numeric", []),
+        *schema.get("categorical", []),
+        *schema.get("binary", [])
     ]
 
     if not feature_cols:

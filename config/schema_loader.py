@@ -1,4 +1,4 @@
-import schemas
+from . import schemas
 
 #loading schema and returning dictionary
 def load_schema():
