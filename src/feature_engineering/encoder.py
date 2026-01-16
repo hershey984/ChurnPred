@@ -14,5 +14,20 @@ def encode_features(
         X_encoded[ordinal_cols] = ord_encoder.fit_transform(X_encoded[ordinal_cols])
     
     if one_hot_cols:
-        pass
-    
+        ohe = OneHotEncoder(sparse=False, handle_unknown='ignore')
+        
+        ohe_array = ohe.fit_transform(X_encoded[one_hot_cols])
+        ohe_col = ohe.get_feature_names_out(X_encoded[one_hot_cols])
+
+        ohe_df = pd.DataFrame(
+            ohe_array,
+            columns=ohe_col,
+            index=X_encoded.index
+        )
+
+        X_encoded = X_encoded.drop(columns=one_hot_cols)
+        X_encoded = pd.concat([X_encoded, ohe_df], axis=1)
+
+    return X_encoded
+
+
