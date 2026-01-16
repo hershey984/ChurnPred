@@ -9,6 +9,9 @@ def encode_features(
     
     X_encoded = X.copy()
 
+    if not one_hot_cols and not ordinal_cols:
+        raise ValueError("no columns provided")
+
     if ordinal_cols:
         ord_encoder = OrdinalEncoder()
         X_encoded[ordinal_cols] = ord_encoder.fit_transform(X_encoded[ordinal_cols])
