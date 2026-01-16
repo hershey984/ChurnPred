@@ -1,3 +1,4 @@
+# preprocessing schemas
 #columns to drop
 DROP_COLS = [
     
@@ -20,4 +21,22 @@ CAT_COLS = [
 BIN_COLS = [
 
 ]
+
+#---------------------------------------------
+# Encoding schemas
+
+ONE_HOT_COLS = [
+
+]
+
+ORDINAL_COLS = [
+
+]
+
+#scaling schemas 
+SCALE_COLS = [
+
+]
+
+SCALER_TYPE = ""
 
