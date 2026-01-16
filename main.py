@@ -16,8 +16,8 @@ print(df.head())
 
 x, y = preprocess_data(df)
 
-X = encode_features(X, ONE_HOT_COLS, ORDINAL_COLS)
-X, scaler  = scaling_features(X, SCALE_COLS, SCALER_TYPE)
+X = encode_features(x, ONE_HOT_COLS, ORDINAL_COLS)
+X, scaler  = scaling_features(x, SCALE_COLS, SCALER_TYPE)
 
 
 
